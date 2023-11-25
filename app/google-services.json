@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "499648621744",
+    "project_id": "kaar-1ca2c",
+    "storage_bucket": "kaar-1ca2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499648621744:android:3433236eb62fbde2831f75",
+        "android_client_info": {
+          "package_name": "com.example.kaar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdU1w7AiR3aKL0IMfaPDYE-_108hbyZkM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499648621744:android:ee0d100c714958a2831f75",
+        "android_client_info": {
+          "package_name": "om.example.kaar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdU1w7AiR3aKL0IMfaPDYE-_108hbyZkM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

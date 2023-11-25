@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.kaar.presentation.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.kaar.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.kaar.presentation.onBoarding.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" >
+        <action
+            android:id="@+id/toSplashScreen"
+            app:destination="@id/splashFragment" />
+        <action
+            android:id="@+id/action_onBoardingFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.kaar.presentation.auth.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.kaar.presentation.auth.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.example.kaar.presentation.forget.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" >
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_submitEmailFragment"
+            app:destination="@id/submitEmailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/submitEmailFragment"
+        android:name="com.example.kaar.presentation.forget.SubmitEmailFragment"
+        android:label="fragment_submit_email"
+        tools:layout="@layout/fragment_submit_email" >
+        <action
+            android:id="@+id/action_submitEmailFragment_to_OTPVerificationFragment"
+            app:destination="@id/OTPVerificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/OTPVerificationFragment"
+        android:name="com.example.kaar.presentation.otp.OTPVerificationFragment"
+        android:label="fragment_o_t_p_verification"
+        tools:layout="@layout/fragment_o_t_p_verification" >
+        <action
+            android:id="@+id/action_OTPVerificationFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.example.kaar.presentation.otp.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" >
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_congratsFragment"
+            app:destination="@id/congratsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/congratsFragment"
+        android:name="com.example.kaar.presentation.otp.CongratsFragment"
+        android:label="fragment_congrats"
+        tools:layout="@layout/fragment_congrats" >
+        <action
+            android:id="@+id/action_congratsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
