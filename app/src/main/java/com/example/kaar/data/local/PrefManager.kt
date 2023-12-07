@@ -1,11 +1,15 @@
-package com.example.kaar.data
+package com.example.kaar.data.local
 
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
-class PrefManager(val context: Context) {
+class PrefManager @Inject constructor(@ApplicationContext val context:Context) {
+
+    
     private val masterKey: MasterKey by lazy {
         MasterKey.Builder(context).setKeyScheme(MasterKey.KeyScheme.AES256_GCM).build()
     }

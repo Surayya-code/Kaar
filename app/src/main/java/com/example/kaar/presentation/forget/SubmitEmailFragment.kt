@@ -2,7 +2,7 @@ package com.example.kaar.presentation.forget
 
 
 import androidx.navigation.fragment.findNavController
-import com.example.kaar.common.BaseFragment
+import com.example.kaar.common.base.BaseFragment
 import com.example.kaar.databinding.FragmentSubmitEmailBinding
 
 

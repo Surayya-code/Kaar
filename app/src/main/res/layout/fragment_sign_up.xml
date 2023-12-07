@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewHello" />
 
     <LinearLayout
-        android:id="@+id/layoutUsername"
+        android:id="@+id/layoutEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -66,7 +66,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"
+                android:text="Email"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="@color/blue" />
@@ -80,7 +80,7 @@
         </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextInputLayoutUsername"
+        android:id="@+id/TextInputLayoutEmail"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextUsername"
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"/>
@@ -110,7 +110,7 @@
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/layoutUsername">
+        app:layout_constraintTop_toBottomOf="@+id/layoutEmail">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -154,7 +154,7 @@
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberPassword"/>
+                android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
@@ -183,13 +183,14 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
-        android:id="@+id/btn_circularProgress"
+        android:id="@+id/btnCircularProgress"
         android:layout_width="0dp"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:background="@drawable/button_back"
         android:backgroundTint="@color/blue"
         android:text="Login"
+        android:paddingVertical="12dp"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -211,7 +212,7 @@
         android:fontFamily="@font/poppins"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/btn_circularProgress" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCircularProgress" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFacebook"

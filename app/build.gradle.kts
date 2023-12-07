@@ -3,10 +3,11 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
     id ("kotlin-parcelize")
     id("com.google.gms.google-services")
-    id("com.google.dagger.hilt.android")
-    id("kotlin-kapt")
+
 }
 
 android {
@@ -16,7 +17,7 @@ android {
     defaultConfig {
         applicationId = "com.example.kaar"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -43,13 +44,15 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        //noinspection DataBindingWithoutKapt
         dataBinding = true
     }
 }
 
 dependencies {
 
-    val navVersion = "2.7.5"
+    //val navVersion = "2.7.5"
+    val navVersion = "2.5.3"
     val lottieVersion = "3.4.0"
     val lifecycle_version = "2.6.2"
 
@@ -72,6 +75,10 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
     //Coroutine
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+    //Dagger hilt
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+
     //page Indicator
     implementation("com.tbuonomo:dotsindicator:5.0")
     //Lottie
@@ -80,17 +87,25 @@ dependencies {
     implementation ("androidx.security:security-crypto:1.1.0-alpha06")
     //circularButton Github
     implementation("com.github.leandroborgesferreira:loading-button-android:2.3.0")
+    //Retrofit
+    implementation ("com.google.code.gson:gson:2.9.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    //MoationToast
+    //implementation ("com.github.Spikeysanju:MotionToast:1.4")
+    //toasty
+    //implementation ("com.github.shubhamvashisht:KToasty:1.0")
 
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+
+
+
+
 
 }
 
+// Allow references to generated code
 kapt {
-    correctErrorTypes =true
+    correctErrorTypes = true
 }
-//
-//Dagger-hilt
-//annotationProcessor("com.google.dagger:hilt-compiler:2.45")
-//kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2")
-

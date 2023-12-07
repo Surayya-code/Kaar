@@ -1,18 +1,16 @@
 package com.example.kaar.common.utils
 
+import android.util.Patterns
 
-fun validateUsername(username: String): RegisterValidation {
 
-    if (username.isEmpty())
-        return RegisterValidation.Failed("Username cannot be empty")
+fun validateEmail(email: String): RegisterValidation {
 
-    if (username.length < 6) {
-        return RegisterValidation.Failed("Username must be at least 6 characters")
-    }
+    if (email.isEmpty())
+        return RegisterValidation.Failed("Email cannot be empty")
 
-    if (!username[0].isUpperCase()) {
-        return RegisterValidation.Failed("The first letter of the username must be capitalized")
-    }
+    if (!Patterns.EMAIL_ADDRESS.matcher(email).matches())
+        return RegisterValidation.Failed("Wrong email format")
+
 
     return RegisterValidation.Success
 }
@@ -20,10 +18,10 @@ fun validateUsername(username: String): RegisterValidation {
 fun validatePassword(password: String): RegisterValidation {
 
     if (password.isEmpty())
-        return RegisterValidation.Failed("Username cannot be empty")
+        return RegisterValidation.Failed("Password cannot be empty")
 
     if (password.length < 6) {
-        return RegisterValidation.Failed("Username must be at least 6 characters")
+        return RegisterValidation.Failed("Password must be at least 6 characters")
     }
 
 

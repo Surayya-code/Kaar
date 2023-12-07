@@ -9,6 +9,7 @@ import com.example.kaar.R
 import com.example.kaar.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -26,9 +27,15 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
-                R.id.splashFragment, R.id.onBoardingFragment, R.id.signUpFragment,
-                R.id.signInFragment, R.id.forgetPasswordFragment, R.id.submitEmailFragment,
-                R.id.OTPVerificationFragment, R.id.congratsFragment, R.id.resetPasswordFragment -> {
+                R.id.splashFragment,
+                R.id.onBoardingFragment,
+                R.id.signUpFragment,
+                R.id.signInFragment,
+                R.id.forgetPasswordFragment,
+                R.id.submitEmailFragment,
+                R.id.OTPVerificationFragment,
+                R.id.congratsFragment,
+                R.id.resetPasswordFragment -> {
                     binding.bottomNavigationView.visibility = View.GONE
                 }
                 else -> {

@@ -1,13 +1,11 @@
-package com.example.kaar.common
+package com.example.kaar.common.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
-import dagger.hilt.android.AndroidEntryPoint
 import java.lang.IllegalArgumentException
 
 
@@ -34,8 +32,8 @@ abstract class BaseFragment<VB:ViewBinding> (
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observeEvents()
         onViewCreateFinish()
+        observeEvents()
     }
 
     override fun onDestroyView() {
