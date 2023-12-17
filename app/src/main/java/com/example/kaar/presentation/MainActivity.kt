@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.submitEmailFragment,
                 R.id.OTPVerificationFragment,
                 R.id.congratsFragment,
+                R.id.profileFragment2,
                 R.id.resetPasswordFragment -> {
                     binding.bottomNavigationView.visibility = View.GONE
                 }

@@ -49,7 +49,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                     is NewsUiState.Loading -> {
                         binding.progressBar4.visible()
                     }
-                    else -> {}
+                    else ->
+                    {}
                 }
             }
         }

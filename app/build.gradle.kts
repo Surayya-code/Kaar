@@ -97,7 +97,8 @@ dependencies {
     //implementation ("com.github.Spikeysanju:MotionToast:1.4")
     //toasty
     //implementation ("com.github.shubhamvashisht:KToasty:1.0")
-
+    //circular image
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 
 
 
