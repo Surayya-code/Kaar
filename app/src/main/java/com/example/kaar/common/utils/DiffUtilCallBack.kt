@@ -1,22 +1,48 @@
 package com.example.kaar.common.utils
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.kaar.model.ProductResponseModelItem
+import com.example.kaar.model.Article
+import com.example.kaar.model.NewsResponseModelItem
 
-object DiffUtilCallBack : DiffUtil.ItemCallback<ProductResponseModelItem>() {
-    override fun areItemsTheSame(
-        oldItem: ProductResponseModelItem,
-        newItem: ProductResponseModelItem,
+object ArticleDiffUtilCallBack : DiffUtil.ItemCallback<Article>() {
+
+       override fun areItemsTheSame(
+        oldItem: Article,
+        newItem: Article
     ): Boolean {
-        return oldItem.id==newItem.id
+        return oldItem.title==newItem.title
+//                oldItem.author == newItem.author &&
+//                   oldItem.content == newItem.content &&
+//                   oldItem.description == newItem.description &&
+//                   oldItem.publishedAt == newItem.publishedAt &&
+//                   oldItem.source == newItem.source &&
+//                   oldItem.url == newItem.url &&
+//                   oldItem.urlToImage == newItem.urlToImage
     }
 
     override fun areContentsTheSame(
-        oldItem: ProductResponseModelItem,
-        newItem: ProductResponseModelItem,
+        oldItem: Article,
+        newItem: Article
     ): Boolean {
-        return oldItem.id == newItem.id
-                && oldItem.title == newItem.title
-                && oldItem.description == newItem.description
+        return oldItem==newItem
     }
+
+}
+
+object NewsResponseDiffUtilCallBack : DiffUtil.ItemCallback<NewsResponseModelItem>() {
+
+    override fun areItemsTheSame(
+        oldItem: NewsResponseModelItem,
+        newItem: NewsResponseModelItem
+    ): Boolean {
+        return oldItem.articles==newItem.articles
+    }
+
+    override fun areContentsTheSame(
+        oldItem: NewsResponseModelItem,
+        newItem: NewsResponseModelItem
+    ): Boolean {
+        return oldItem==newItem
+    }
+
 }

@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 <data>
     <variable
-        name="productNews"
-        type="com.example.kaar.model.ProductResponseModelItem" />
+        name="news"
+        type="com.example.kaar.model.Article" />
 </data>
 
 <androidx.cardview.widget.CardView
@@ -45,7 +45,7 @@
                 android:layout_width="120dp"
                 android:maxHeight="135dp"
                 android:maxWidth="120dp"
-                load_image_url="@{productNews.images[0]}"
+                load_image_url="@{news.urlToImage}"
                 android:layout_height="135dp"
                 android:scaleType="fitXY"
                 tools:srcCompat="@tools:sample/avatars"/>
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins"
-                android:text="@{productNews.title}"
+                android:text="@{news.title}"
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.083"
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/poppins"
-                android:text="@{productNews.description}"
+                android:text="@{news.description}"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -126,7 +126,7 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="@{productNews.price}" />
+                    android:text="@{news.author}" />
 
                 <ImageView
                     android:layout_width="20dp"

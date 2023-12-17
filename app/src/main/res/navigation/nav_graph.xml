@@ -118,4 +118,18 @@
         android:name="com.example.kaar.presentation.home.TrendingFragment"
         android:label="fragment_trending"
         tools:layout="@layout/fragment_trending" />
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.example.kaar.presentation.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.kaar.presentation.explore.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 </navigation>

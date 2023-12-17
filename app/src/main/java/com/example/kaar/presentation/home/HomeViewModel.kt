@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.kaar.common.utils.Resource
 import com.example.kaar.data.repository.NewsRepository
-import com.example.kaar.domain.NewsUiState
+import com.example.kaar.domain.ArticleUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -14,31 +14,29 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val movieRepository: NewsRepository): ViewModel() {
+    private val newsRepository: NewsRepository
+): ViewModel() {
 
-    private val _getNews= MutableLiveData<NewsUiState>()
-    val getNews: LiveData<NewsUiState> = _getNews
+    private val _newsState = MutableLiveData<ArticleUiState>()
+    val newsState: LiveData<ArticleUiState> = _newsState
 
 
-    init {
-        getAllNews()
-    }
+   init{
+    getArticle()
+   }
 
-    private fun getAllNews() {
+    private fun getArticle(){
         viewModelScope.launch {
-            movieRepository.getNewsData().collectLatest {
-                when (it) {
-                    is Resource.Success -> {
-                        _getNews.value = NewsUiState.Success(it.data)
-
+            newsRepository.getArticlesData().collectLatest {
+                when(it){
+                    is Resource.Success->{
+                        _newsState.value = ArticleUiState.Success(it.data)
                     }
-
-                    is Resource.Error -> {
-                        _getNews.value = NewsUiState.Error(it.exception.message.toString())
+                    is Resource.Loading->{
+                        _newsState.value =ArticleUiState.Loading
                     }
-
-                    is Resource.Loading -> {
-                        _getNews.value = NewsUiState.Loading
+                    is Resource.Error->{
+                        _newsState.value=ArticleUiState.Error(it.exception.message.toString())
                     }
                 }
             }

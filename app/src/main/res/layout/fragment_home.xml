@@ -396,7 +396,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvDailyNews"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -404,7 +404,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:itemCount="5"
-                tools:listitem="@layout/item_news" />
+                tools:listitem="@layout/item_article" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

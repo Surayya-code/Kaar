@@ -6,12 +6,12 @@
         android:id="@+id/homeFragment"
         android:icon="@drawable/home"/>
     <item android:title="Explore"
-        android:id="@+id/exploreFragment"
+        android:id="@+id/searchFragment"
         android:icon="@drawable/compass"/>
     <item android:title="Bookmark"
         android:id="@+id/myListFragment"
         android:icon="@drawable/bookmark"/>
     <item android:title="Profile"
-        android:id="@+id/profileFragment"
+        android:id="@+id/profileFragment2"
         android:icon="@drawable/user"/>
 </menu>
