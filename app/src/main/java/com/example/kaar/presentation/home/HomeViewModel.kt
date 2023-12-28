@@ -25,7 +25,7 @@ class HomeViewModel @Inject constructor(
     getArticle()
    }
 
-    private fun getArticle(){
+     fun getArticle(){
         viewModelScope.launch {
             newsRepository.getArticlesData().collectLatest {
                 when(it){
