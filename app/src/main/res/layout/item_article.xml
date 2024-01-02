@@ -43,11 +43,11 @@
                 <ImageView
                     android:id="@+id/imageView23"
                     android:src="@drawable/first"
-                    android:layout_width="135dp"
+                    android:layout_width="150dp"
                     android:maxHeight="135dp"
                     android:maxWidth="135dp"
-                    load_image_url="@{article.url}"
-                    android:layout_height="135dp"
+                    load_image_url="@{article.urlToImage}"
+                    android:layout_height="150dp"
                     android:scaleType="fitXY"
                     tools:srcCompat="@tools:sample/avatars"/>
             </androidx.cardview.widget.CardView>
@@ -86,47 +86,62 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/poppins"
                     android:text="@{article.source.name}"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/textView18"
                     app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/newsLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="@+id/itemCard"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView19">
+                    app:layout_constraintTop_toBottomOf="@+id/textView19"
+                    app:layout_constraintVertical_bias="0.0">
 
-                          <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="5dp"
-                            android:fontFamily="@font/poppins_bold"
-                            android:text="@{article.author}"/>
 
+                    <TextView
+                        android:id="@+id/authorTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@{article.author}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
 
                     <ImageView
+                        android:id="@+id/oclockImageView"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
-                        android:layout_marginStart="5dp"
-                        android:src="@drawable/oclock" />
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/oclock"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/authorTextView" />
 
                     <TextView
-                        android:id="@+id/oclock"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/dateTime"
+                        formattedDate="@{article.publishedAt}"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginStart="5dp"
-                        android:text="@{article.publishedAt}" />
-                </LinearLayout>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/oclockImageView"
+                        app:layout_constraintTop_toTopOf="@+id/oclockImageView" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

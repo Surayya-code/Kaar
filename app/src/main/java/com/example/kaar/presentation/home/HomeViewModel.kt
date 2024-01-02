@@ -20,9 +20,12 @@ class HomeViewModel @Inject constructor(
     private val _newsState = MutableLiveData<ArticleUiState>()
     val newsState: LiveData<ArticleUiState> = _newsState
 
+    private val _trendNews = MutableLiveData<ArticleUiState>()
+    val trendNews: LiveData<ArticleUiState> = _trendNews
 
    init{
     getArticle()
+    getTrendNews()
    }
 
      fun getArticle(){
@@ -33,10 +36,29 @@ class HomeViewModel @Inject constructor(
                         _newsState.value = ArticleUiState.Success(it.data)
                     }
                     is Resource.Loading->{
-                        _newsState.value =ArticleUiState.Loading
+                        _newsState.value = ArticleUiState.Loading
                     }
                     is Resource.Error->{
                         _newsState.value=ArticleUiState.Error(it.exception.message.toString())
+                    }
+                }
+            }
+        }
+    }
+     fun getTrendNews() {
+        viewModelScope.launch {
+            newsRepository.getArticlesData().collectLatest {
+                when (it) {
+                    is Resource.Success -> {
+                        _trendNews.value = ArticleUiState.Success(it.data)
+                    }
+
+                    is Resource.Error -> {
+                        _trendNews.value = ArticleUiState.Error(it.exception.message.toString())
+                    }
+
+                    is Resource.Loading -> {
+                        _trendNews.value = ArticleUiState.Loading
                     }
                 }
             }

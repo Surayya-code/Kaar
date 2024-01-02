@@ -6,4 +6,6 @@
     <color name="green">#65EDAC</color>
     <color name="red">#B31312</color>
     <color name="grey">#EEF1F4</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="place_holder">#C2C2C2</color>
 </resources>

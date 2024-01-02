@@ -99,6 +99,12 @@ dependencies {
     //implementation ("com.github.shubhamvashisht:KToasty:1.0")
     //circular image
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+    //okhttp
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    //chucker
+    debugImplementation ("com.github.chuckerteam.chucker:library:4.0.0")
+    releaseImplementation ("com.github.chuckerteam.chucker:library-no-op:4.0.0")
 
 
 
